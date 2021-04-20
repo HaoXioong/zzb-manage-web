@@ -71,7 +71,7 @@
           // this.$http.post('/item/brand', this.$qs.stringify(params))
           this.$http({
             method: this.isEdit ? 'put' : 'post',
-            url: '/item/brand',
+            url: '/item/brand/addBrand',
             data: this.$qs.stringify(params)
           }).then(() => {
             // 关闭窗口

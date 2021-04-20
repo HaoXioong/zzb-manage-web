@@ -137,6 +137,16 @@
             this.oldBrand.categories = data;
           })
       },
+      deleteBrand(oldBrand){
+        // 根据品牌信息查询商品分类
+        let param = this.$qs.stringify({id: oldBrand.id})
+        this.$http.post("/item/brand/delBrand", param)
+          .then(({data}) => {
+              if(data.code == 200){
+                this.getDataFromServer();
+              }
+          })
+      },
       closeWindow(){
         // 重新加载数据
         this.getDataFromServer();
