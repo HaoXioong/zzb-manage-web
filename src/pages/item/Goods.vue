@@ -140,8 +140,8 @@
             rows: this.pagination.rowsPerPage,// 每页大小
           }
         }).then(resp => { // 这里使用箭头函数
-          this.goodsList = resp.data.items;
-          this.totalGoods = resp.data.total;
+          this.goodsList = resp.data.data.list;
+          this.totalGoods = resp.data.data.total;
           // 完成赋值后，把加载状态赋值为false
           this.loading = false;
         })

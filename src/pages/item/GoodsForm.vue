@@ -280,7 +280,7 @@ export default {
           this.$http
             .get("/item/brand/cid/" + this.goods.categories[2].id)
             .then(({ data }) => {
-              this.brandOptions = data;
+              this.brandOptions = data.data;
             });
           // 根据分类查询规格参数
           this.$http
@@ -295,7 +295,7 @@ export default {
               // 对特有规格进行筛选
               const arr1 = [];
               const arr2 = [];
-              data.forEach(({id, name,generic, numeric, unit }) => {
+              data.data.forEach(({id, name,generic, numeric, unit }) => {
                 if(generic){
                   const o = { id, name, numeric, unit};
                   if(this.isEdit){

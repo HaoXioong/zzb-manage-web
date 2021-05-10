@@ -126,10 +126,10 @@ export default {
       this.$http
         .get("/item/spec/params?gid=" + this.group.id)
         .then(({ data }) => {
-          data.forEach(p => {
+          data.data.forEach(p => {
               p.segments = p.segments ? p.segments.split(",").map(s => s.split("-")) : [];
           })
-          this.params = data;
+          this.params = data.data;
         })
         .catch(() => {
           this.params = [];
