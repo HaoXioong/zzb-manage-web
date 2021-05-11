@@ -169,9 +169,9 @@ export default {
   methods: {
     submit() {
       // 表单校验。
-      if(!this.$refs.basic.validate){
-        this.$message.error("请先完成表单内容！");
-      }
+      // if(!this.$refs.basic.validate){
+      //   this.$message.error("请先完成表单内容！");
+      // }
       // 先处理goods，用结构表达式接收,除了categories外，都接收到goodsParams中
       const {
         categories: [{ id: cid1 }, { id: cid2 }, { id: cid3 }],
@@ -188,6 +188,7 @@ export default {
         specTemplate[id] = options;
       });
       // 处理sku
+      console.log(this.skus)
       const skus = this.skus
         .filter(s => s.enable)
         .map(({ price, stock, enable, images, indexes, ...rest }) => {
