@@ -10,6 +10,8 @@ axios.defaults.timeout = 2000; // 设置axios的请求时间
 //   return config;
 // })
 
+//尽快恢复速度数据库风格还是对抗肌肤
+
 axios.loadData = async function (url) {
   const resp = await axios.get(url);
   return resp.data;
