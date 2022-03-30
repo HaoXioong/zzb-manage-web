@@ -15,8 +15,6 @@ axios.defaults.timeout = 2000; // 设置axios的请求时间
 jkashdfjkasdhaskjhdkajshd
 */
 
-
-
 axios.loadData = async function (url) {
   const resp = await axios.get(url);
   return resp.data;
